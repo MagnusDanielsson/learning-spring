@@ -61,4 +61,20 @@ public class Airport {
                 ", airportCountry='" + airportCountry + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Airport)) return false;
+
+        Airport airport = (Airport) o;
+
+        return getId() != null ? getId().equals(airport.getId()) : airport.getId() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getId() != null ? getId().hashCode() : 0;
+    }
+
 }

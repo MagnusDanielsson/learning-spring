@@ -101,4 +101,20 @@ public class Passenger {
                 ", passengerCountry='" + passengerCountry + '\'' +
                 '}';
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Passenger)) return false;
+
+        Passenger passenger = (Passenger) o;
+
+        return getId() != null ? getId().equals(passenger.getId()) : passenger.getId() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getId() != null ? getId().hashCode() : 0;
+    }
+
 }
+

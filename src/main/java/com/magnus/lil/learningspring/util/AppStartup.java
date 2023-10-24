@@ -27,6 +27,22 @@ public class AppStartup implements ApplicationListener<ApplicationReadyEvent> {
         Iterable<Passenger> passengers = this.passengerRepository.findAll();
         passengers.forEach(System.out::println);
 
+
+        Passenger magnus = new Passenger();
+        magnus.setPassengerFirstName("Magnus");
+        magnus.setPassengerLastName("Ladulås");
+        magnus.setPassengerAddress("Kungsgatan 1");
+        magnus.setPassengerCity("Huvudstaden");
+        magnus.setPassengerEmail("apabepa@gmail.com");
+        magnus.setPassengerCountry("Sweden");
+        //Passenger magnusPersisted = passengerRepository.save(magnus);
+
+        Airport airport = new Airport();
+        airport.setAirportCity("Malmö");
+        airport.setAirportCountry("Sweden");
+        airport.setAirportName("Sturup");
+
+
     }
 
 }
